@@ -71,8 +71,14 @@
     });
   });
 
-  /* Contact form — composes an e-mail (no backend needed) */
-  var CONTACT_EMAIL = "contato@nexfin.systems"; // TODO: troque pelo seu e-mail real ou plugue um serviço de formulário
+  /* Contato — entrega o lead no WhatsApp (com e-mail como alternativa) */
+  var CONTACT_EMAIL = "nextfin.systems@gmail.com";
+
+  // WhatsApp que recebe os leads. Somente dígitos, com código do país + DDD.
+  // Ex.: Brasil (55) + DDD (11) + número -> "5511999999999".
+  // Enquanto estiver vazio, o formulário envia por e-mail.
+  var WHATSAPP_NUMBER = "";
+
   var form = document.getElementById("contactForm");
   var note = document.getElementById("formNote");
   if (form) {
@@ -87,25 +93,35 @@
         setNote("Preencha nome e e-mail para continuar.", "err");
         return;
       }
-      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      if (!emailOk) {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         setNote("Informe um e-mail válido.", "err");
         return;
       }
 
-      var subject = "Contato via site — " + nome + (empresa ? " (" + empresa + ")" : "");
-      var body =
-        "Nome: " + nome + "\n" +
-        "Empresa: " + (empresa || "-") + "\n" +
-        "E-mail: " + email + "\n\n" +
-        "Mensagem:\n" + (mensagem || "-");
+      // Lead formatado como mensagem
+      var lead =
+        "Olá! Vim pelo site da NexFin 👋\n\n" +
+        "*Novo lead*\n" +
+        "*Nome:* " + nome + "\n" +
+        "*Empresa:* " + (empresa || "-") + "\n" +
+        "*E-mail:* " + email + "\n\n" +
+        "*Mensagem:*\n" + (mensagem || "-");
 
-      window.location.href =
-        "mailto:" + CONTACT_EMAIL +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
-
-      setNote("Abrindo seu e-mail… um especialista responderá em breve.", "ok");
+      if (WHATSAPP_NUMBER) {
+        window.open(
+          "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lead),
+          "_blank",
+          "noopener"
+        );
+        setNote("Abrindo o WhatsApp com a sua mensagem pronta…", "ok");
+      } else {
+        var subject = "Novo lead via site — " + nome + (empresa ? " (" + empresa + ")" : "");
+        window.location.href =
+          "mailto:" + CONTACT_EMAIL +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(lead.replace(/\*/g, ""));
+        setNote("Abrindo seu e-mail… retornaremos em breve.", "ok");
+      }
       form.reset();
     });
   }

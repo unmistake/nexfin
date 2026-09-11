@@ -71,23 +71,24 @@
     });
   });
 
-  /* Contato — entrega o lead no WhatsApp (com e-mail como alternativa) */
+  /* Contato — envia o lead para a função serverless /api/lead,
+     que dispara a mensagem no WhatsApp do dono (número fica no servidor). */
   var CONTACT_EMAIL = "nextfin.systems@gmail.com";
-
-  // WhatsApp que recebe os leads. Somente dígitos, com código do país + DDD.
-  // Ex.: Brasil (55) + DDD (11) + número -> "5511999999999".
-  // Enquanto estiver vazio, o formulário envia por e-mail.
-  var WHATSAPP_NUMBER = "";
-
   var form = document.getElementById("contactForm");
   var note = document.getElementById("formNote");
+
   if (form) {
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var submitLabel = submitBtn ? submitBtn.textContent : "";
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
       var nome = (form.nome.value || "").trim();
       var email = (form.email.value || "").trim();
       var empresa = (form.empresa.value || "").trim();
       var mensagem = (form.mensagem.value || "").trim();
+      var website = form.website ? form.website.value : ""; // honeypot
 
       if (!nome || !email) {
         setNote("Preencha nome e e-mail para continuar.", "err");
@@ -98,31 +99,39 @@
         return;
       }
 
-      // Lead formatado como mensagem
-      var lead =
-        "Olá! Vim pelo site da NexFin 👋\n\n" +
-        "*Novo lead*\n" +
-        "*Nome:* " + nome + "\n" +
-        "*Empresa:* " + (empresa || "-") + "\n" +
-        "*E-mail:* " + email + "\n\n" +
-        "*Mensagem:*\n" + (mensagem || "-");
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Enviando…"; }
+      setNote("", "");
 
-      if (WHATSAPP_NUMBER) {
-        window.open(
-          "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lead),
-          "_blank",
-          "noopener"
-        );
-        setNote("Abrindo o WhatsApp com a sua mensagem pronta…", "ok");
-      } else {
-        var subject = "Novo lead via site — " + nome + (empresa ? " (" + empresa + ")" : "");
-        window.location.href =
-          "mailto:" + CONTACT_EMAIL +
-          "?subject=" + encodeURIComponent(subject) +
-          "&body=" + encodeURIComponent(lead.replace(/\*/g, ""));
-        setNote("Abrindo seu e-mail… retornaremos em breve.", "ok");
-      }
-      form.reset();
+      fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nome: nome,
+          empresa: empresa,
+          email: email,
+          mensagem: mensagem,
+          website: website
+        })
+      })
+        .then(function (r) {
+          return r.json().catch(function () { return {}; }).then(function (b) {
+            return { ok: r.ok && b && b.ok === true };
+          });
+        })
+        .then(function (res) {
+          if (res.ok) {
+            form.reset();
+            setNote("Formulário enviado ✅ Recebemos os seus dados e entraremos em contato em breve.", "ok");
+          } else {
+            setNote("Não foi possível enviar agora. Tente novamente ou escreva para " + CONTACT_EMAIL + ".", "err");
+          }
+        })
+        .catch(function () {
+          setNote("Falha de conexão. Tente novamente ou escreva para " + CONTACT_EMAIL + ".", "err");
+        })
+        .finally(function () {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = submitLabel; }
+        });
     });
   }
 

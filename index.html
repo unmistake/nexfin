@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexFin Systems — Infraestrutura financeira para ecossistemas</title>
+  <meta name="description" content="Tecnologia que constrói novos horizontes. Conecte sua marca a uma infraestrutura completa de pagamentos, conta digital e gestão de vendas — white-label, API-first e pronta para escalar." />
+  <meta name="theme-color" content="#05070d" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NexFin Systems — Infraestrutura financeira para ecossistemas" />
+  <meta property="og:description" content="Tecnologia que constrói novos horizontes. Soluções financeiras sob medida, para um mundo sem fronteiras." />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient background -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-aurora" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb--1" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb--2" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="NexFin — início">
+        <img src="assets/logo.svg" alt="" class="brand__mark" width="34" height="34" />
+        <span class="brand__name">NEX<span class="brand__accent">FIN</span></span>
+      </a>
+      <nav class="nav__links" aria-label="Navegação principal">
+        <a href="#solucoes">Soluções</a>
+        <a href="#plataforma">Plataforma</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#seguranca">Segurança</a>
+        <a href="#faq">Dúvidas</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="#contato" class="btn btn--ghost">Entrar em contato</a>
+        <a href="#contato" class="btn btn--primary">Falar com especialista</a>
+      </div>
+      <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="navMobile">
+      <a href="#solucoes">Soluções</a>
+      <a href="#plataforma">Plataforma</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#seguranca">Segurança</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#contato" class="btn btn--primary btn--block">Falar com especialista</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__copy reveal">
+          <span class="eyebrow">
+            <span class="eyebrow__dot"></span>
+            Infraestrutura financeira para ecossistemas
+          </span>
+          <h1 class="hero__title">
+            Tecnologia que constrói
+            <span class="grad-text">novos horizontes</span>.
+          </h1>
+          <p class="hero__sub">
+            Soluções financeiras sob medida, para um mundo sem fronteiras. Conecte sua marca a uma
+            infraestrutura completa de pagamentos, conta digital e gestão de vendas — white-label,
+            API-first e pronta para escalar.
+          </p>
+          <div class="hero__cta">
+            <a href="#contato" class="btn btn--primary btn--lg">Começar agora
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#solucoes" class="btn btn--ghost btn--lg">Ver soluções</a>
+          </div>
+          <div class="hero__trust">
+            <span>Confiado por ecossistemas que não param de crescer</span>
+            <div class="hero__trust-logos">
+              <span>ERPs</span><span>·</span><span>Marketplaces</span><span>·</span><span>SaaS</span><span>·</span><span>Franquias</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard mockup -->
+        <div class="hero__visual reveal" data-delay="120">
+          <div class="mock-glow" aria-hidden="true"></div>
+          <div class="mock-card">
+            <div class="mock-card__top">
+              <div class="mock-brand">
+                <img src="assets/logo.svg" alt="" width="26" height="26" />
+                <span>sua marca</span>
+              </div>
+              <span class="mock-pill">Conta digital</span>
+            </div>
+            <div class="mock-balance">
+              <span class="mock-label">Saldo disponível</span>
+              <strong class="mock-value">R$ 128.480<span>,00</span></strong>
+              <span class="mock-delta">▲ 18,4% este mês</span>
+            </div>
+            <div class="mock-chart" aria-hidden="true">
+              <svg viewBox="0 0 320 90" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="rgba(0,229,160,0.45)"/>
+                    <stop offset="1" stop-color="rgba(0,229,160,0)"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0 70 L40 60 L80 65 L120 42 L160 50 L200 30 L240 36 L280 16 L320 22 V90 H0 Z" fill="url(#cg)"/>
+                <path d="M0 70 L40 60 L80 65 L120 42 L160 50 L200 30 L240 36 L280 16 L320 22" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="mock-actions">
+              <div class="mock-act"><span class="mock-act__ico">⚡</span>Pix</div>
+              <div class="mock-act"><span class="mock-act__ico">🔗</span>Link</div>
+              <div class="mock-act"><span class="mock-act__ico">💳</span>Cartão</div>
+              <div class="mock-act"><span class="mock-act__ico">📊</span>Extrato</div>
+            </div>
+            <div class="mock-rows">
+              <div class="mock-row">
+                <span class="mock-row__dot"></span>
+                <span class="mock-row__name">Recebimento Pix</span>
+                <span class="mock-row__val pos">+ R$ 1.240,00</span>
+              </div>
+              <div class="mock-row">
+                <span class="mock-row__dot"></span>
+                <span class="mock-row__name">Venda no checkout</span>
+                <span class="mock-row__val pos">+ R$ 89,90</span>
+              </div>
+              <div class="mock-row">
+                <span class="mock-row__dot dim"></span>
+                <span class="mock-row__name">Repasse automático</span>
+                <span class="mock-row__val">R$ 512,30</span>
+              </div>
+            </div>
+          </div>
+          <div class="mock-float mock-float--pix">
+            <span class="mock-float__ico">⚡</span>
+            <div><strong>Pix recebido</strong><small>na hora, 24/7</small></div>
+          </div>
+          <div class="mock-float mock-float--api">
+            <span class="mock-float__ico">&lt;/&gt;</span>
+            <div><strong>API-first</strong><small>integração em minutos</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="stat reveal">
+          <strong class="stat__num grad-text">&lt; 5 dias</strong>
+          <span class="stat__label">Do onboarding ao go-live</span>
+        </div>
+        <div class="stat reveal" data-delay="80">
+          <strong class="stat__num grad-text">99,9%</strong>
+          <span class="stat__label">Disponibilidade da plataforma</span>
+        </div>
+        <div class="stat reveal" data-delay="160">
+          <strong class="stat__num grad-text">100%</strong>
+          <span class="stat__label">White-label, com a sua marca</span>
+        </div>
+        <div class="stat reveal" data-delay="240">
+          <strong class="stat__num grad-text">24/7</strong>
+          <span class="stat__label">Monitoramento e suporte</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOLUÇÕES ============ -->
+    <section class="section" id="solucoes">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow eyebrow--center"><span class="eyebrow__dot"></span>Soluções</span>
+          <h2 class="section__title">Uma infraestrutura financeira completa. <span class="grad-text">Com a sua cara.</span></h2>
+          <p class="section__lead">Do primeiro clique ao extrato, você entrega uma operação financeira inteira — sem desenvolver do zero, sem integrar dezenas de fornecedores.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card__ico">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.8"/><path d="M7 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Conta digital</h3>
+            <p>Conta completa para centralizar recebimentos, Pix, transferências e pagamentos de contas — tudo em um só lugar.</p>
+          </article>
+
+          <article class="card reveal" data-delay="60">
+            <div class="card__ico">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Pagamentos & Pix</h3>
+            <p>Receba por Pix, cartão, boleto e link de pagamento. Recebimento instantâneo e conciliação automática das vendas.</p>
+          </article>
+
+          <article class="card reveal" data-delay="120">
+            <div class="card__ico">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M9 9h6M9 13h6M9 17h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Checkout & Links</h3>
+            <p>Checkout white-label e links de pagamento prontos para vender em todo o país, com a sua identidade visual.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__ico">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5M4 19h16M8 15l3-4 3 3 4-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Gestão de vendas</h3>
+            <p>Painel para acompanhar vendas, repasses e conciliação em tempo real. Da ativação à operação, com total controle.</p>
+          </article>
+
+          <article class="card reveal" data-delay="60">
+            <div class="card__ico">
+              <svg viewBox="0 0 24 24" fill="none"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13 6l-2 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>APIs & Webhooks</h3>
+            <p>Infraestrutura API-first para conectar pagamentos ao seu produto em minutos. Documentação clara e ambiente de testes.</p>
+          </article>
+
+          <article class="card reveal" data-delay="120">
+            <div class="card__ico">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6l-8-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Sua marca (white-label)</h3>
+            <p>App, portal e checkout com a sua identidade — do primeiro acesso ao extrato. Seus clientes veem só a sua marca.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLATAFORMA / PARA QUEM ============ -->
+    <section class="section section--alt" id="plataforma">
+      <div class="container split">
+        <div class="split__copy reveal">
+          <span class="eyebrow"><span class="eyebrow__dot"></span>Para quem é</span>
+          <h2 class="section__title">Feita para quem quer <span class="grad-text">construir o próprio ecossistema</span> financeiro.</h2>
+          <p class="section__lead">Não é preciso vir do mercado financeiro nem ter uma equipe de tecnologia. É preciso ter um mercado para atender — e vontade de operar com a sua marca.</p>
+          <ul class="check-list">
+            <li>ERPs, PDVs e softwares que querem somar a operação financeira à oferta</li>
+            <li>Marketplaces e ecossistemas que precisam de pagamentos nativos</li>
+            <li>Redes, franquias e multilojas que centralizam recebimentos</li>
+            <li>Empreendedores em busca de receita recorrente, não venda única</li>
+          </ul>
+          <a href="#contato" class="btn btn--primary">Quero construir o meu</a>
+        </div>
+
+        <div class="split__panel reveal" data-delay="120">
+          <div class="audience">
+            <div class="audience__item">
+              <span class="audience__ico">🏦</span>
+              <div><strong>Bancos digitais</strong><small>Conta e pagamentos white-label</small></div>
+            </div>
+            <div class="audience__item">
+              <span class="audience__ico">🛒</span>
+              <div><strong>Marketplaces</strong><small>Split e repasses automáticos</small></div>
+            </div>
+            <div class="audience__item">
+              <span class="audience__ico">🧩</span>
+              <div><strong>SaaS & ERPs</strong><small>Pagamentos via API</small></div>
+            </div>
+            <div class="audience__item">
+              <span class="audience__ico">🏪</span>
+              <div><strong>Redes & franquias</strong><small>Gestão multiloja</small></div>
+            </div>
+            <div class="audience__item">
+              <span class="audience__ico">🎟️</span>
+              <div><strong>Ticketeiras</strong><small>Checkout de alto volume</small></div>
+            </div>
+            <div class="audience__item">
+              <span class="audience__ico">🚀</span>
+              <div><strong>Novos players</strong><small>Do zero ao primeiro pagamento</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMO FUNCIONA ============ -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow eyebrow--center"><span class="eyebrow__dot"></span>Como funciona</span>
+          <h2 class="section__title">Da ativação à operação, <span class="grad-text">sem uma linha de código</span>.</h2>
+          <p class="section__lead">Uma plataforma completa e pronta para operar — que você personaliza com a sua marca e coloca no ar sem equipe técnica.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal">
+            <span class="step__num">01</span>
+            <h3>Conecte</h3>
+            <p>Integre via API ou use a plataforma no-code. Sua operação começa sem infraestrutura própria.</p>
+          </div>
+          <div class="step reveal" data-delay="80">
+            <span class="step__num">02</span>
+            <h3>Personalize</h3>
+            <p>Aplique a sua marca em todo o ambiente — do checkout ao aplicativo e ao portal de gestão.</p>
+          </div>
+          <div class="step reveal" data-delay="160">
+            <span class="step__num">03</span>
+            <h3>Ative</h3>
+            <p>Coloque a operação no ar em dias. Sem desenvolvimento, sem integrar fornecedores.</p>
+          </div>
+          <div class="step reveal" data-delay="240">
+            <span class="step__num">04</span>
+            <h3>Escale</h3>
+            <p>Cresça com uma infraestrutura robusta, preparada para alto volume e grandes operações.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SEGURANÇA / POR QUE ============ -->
+    <section class="section section--alt" id="seguranca">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow eyebrow--center"><span class="eyebrow__dot"></span>Por que a NexFin</span>
+          <h2 class="section__title">Receita recorrente sobre uma base <span class="grad-text">segura e escalável</span>.</h2>
+        </div>
+        <div class="why">
+          <article class="why__card why__card--wide reveal">
+            <h3>Ganhe sobre cada transação</h3>
+            <p>Cada Pix, boleto e pagamento processado pelos seus clientes gera receita para você. A bola de neve começa no primeiro mês — construa uma estrutura financeira com receita recorrente, não venda única.</p>
+            <div class="why__tags"><span>TPV</span><span>Split</span><span>Repasses</span><span>Comissão</span></div>
+          </article>
+          <article class="why__card reveal" data-delay="80">
+            <div class="card__ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6l-8-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+            <h3>Infraestrutura segura</h3>
+            <p>Arquitetura moderna, criptografia ponta a ponta e monitoramento 24/7 sobre cada operação.</p>
+          </article>
+          <article class="why__card reveal" data-delay="120">
+            <div class="card__ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <h3>Sem hardware, sem fronteiras</h3>
+            <p>Soluções 100% cloud. Qualquer celular vira ponto de venda — um mundo sem fronteiras.</p>
+          </article>
+          <article class="why__card reveal" data-delay="160">
+            <div class="card__ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <h3>Evolução contínua</h3>
+            <p>O produto evolui sem esforço seu. Novas funcionalidades chegam prontas para a sua operação.</p>
+          </article>
+          <article class="why__card reveal" data-delay="200">
+            <div class="card__ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20v-6M10 20V8M16 20v-9M22 20V4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+            <h3>Pronta para escalar</h3>
+            <p>Da primeira venda ao alto volume, a mesma base sustenta o crescimento da sua operação.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA / CONTATO ============ -->
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="cta reveal">
+          <div class="cta__glow" aria-hidden="true"></div>
+          <div class="cta__copy">
+            <span class="eyebrow"><span class="eyebrow__dot"></span>Falar com especialista</span>
+            <h2 class="section__title">Vamos construir a sua <span class="grad-text">infraestrutura financeira</span>?</h2>
+            <p class="section__lead">Deixe seus dados e um especialista da NexFin entra em contato para desenhar o modelo que faz sentido para o seu negócio.</p>
+            <ul class="cta__points">
+              <li>✓ Operação completa e white-label</li>
+              <li>✓ Go-live em dias, sem equipe técnica</li>
+              <li>✓ Receita recorrente desde o primeiro mês</li>
+            </ul>
+          </div>
+          <form class="cta__form" id="contactForm" novalidate>
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+            </div>
+            <div class="field">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" />
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="voce@empresa.com" required />
+            </div>
+            <div class="field">
+              <label for="mensagem">Sobre a sua operação</label>
+              <textarea id="mensagem" name="mensagem" rows="3" placeholder="Conte um pouco sobre o seu mercado e objetivo"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block btn--lg">Falar com especialista</button>
+            <p class="cta__note" id="formNote" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section section--alt" id="faq">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow eyebrow--center"><span class="eyebrow__dot"></span>Dúvidas frequentes</span>
+        <h2 class="section__title">As perguntas que aparecem <span class="grad-text">antes de decidir</span>.</h2>
+      </div>
+      <div class="faq reveal">
+        <details class="faq__item">
+          <summary>O que é a NexFin?<span class="faq__plus"></span></summary>
+          <p>A NexFin é uma infraestrutura financeira para ecossistemas. Entregamos a operação completa — conta digital, pagamentos, Pix, checkout e gestão de vendas — em modelo white-label, para você oferecer serviços financeiros com a sua marca.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Preciso ter uma equipe técnica?<span class="faq__plus"></span></summary>
+          <p>Não. A plataforma é no-code e API-first: você pode começar sem desenvolver nada usando o ambiente pronto, ou integrar via API quando quiser mais controle. Cuidamos da infraestrutura e da evolução do produto.</p>
+        </details>
+        <details class="faq__item">
+          <summary>A operação fica com a minha marca?<span class="faq__plus"></span></summary>
+          <p>Sim. Todo o ambiente — do checkout ao aplicativo e portal de gestão — é personalizado com a sua identidade visual. Seus clientes enxergam apenas a sua marca.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Quanto tempo leva para ir ao ar?<span class="faq__plus"></span></summary>
+          <p>Com os produtos no-code, a ativação leva poucos dias. Após a assinatura, você personaliza o ambiente e coloca a operação no ar sem depender de longos ciclos de desenvolvimento.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Como funciona a segurança?<span class="faq__plus"></span></summary>
+          <p>Operamos sobre uma arquitetura moderna, com criptografia ponta a ponta, controles de acesso e monitoramento 24/7 de cada transação, seguindo as boas práticas do mercado financeiro.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Como a plataforma gera receita para mim?<span class="faq__plus"></span></summary>
+          <p>Você ganha sobre o volume processado (TPV): cada Pix, boleto e pagamento dos seus clientes gera comissão. Quanto mais eles vendem, mais a sua operação cresce — receita recorrente, não venda única.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a class="brand" href="#top" aria-label="NexFin — início">
+          <img src="assets/logo.svg" alt="" class="brand__mark" width="30" height="30" />
+          <span class="brand__name">NEX<span class="brand__accent">FIN</span></span>
+        </a>
+        <p>Infraestrutura financeira para ecossistemas.<br />Tecnologia que constrói novos horizontes.</p>
+        <a href="https://www.instagram.com/nexfin.systems/" target="_blank" rel="noopener" class="footer__social">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+          @nexfin.systems
+        </a>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>Soluções</h4>
+          <a href="#solucoes">Conta digital</a>
+          <a href="#solucoes">Pagamentos & Pix</a>
+          <a href="#solucoes">Checkout & Links</a>
+          <a href="#solucoes">APIs & Webhooks</a>
+        </div>
+        <div class="footer__col">
+          <h4>Empresa</h4>
+          <a href="#plataforma">Para quem é</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#seguranca">Segurança</a>
+          <a href="#faq">Dúvidas</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contato</h4>
+          <a href="#contato">Falar com especialista</a>
+          <a href="https://www.instagram.com/nexfin.systems/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> NexFin Systems. Todos os direitos reservados.</span>
+      <span>Feito para um mundo sem fronteiras.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

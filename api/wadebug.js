@@ -1,5 +1,7 @@
-// TEMPORÁRIO — diagnóstico de entrega. Envia um template e devolve a resposta
-// crua da Graph API. Query: ?tpl=hello_world|novo_lead  &to=<numero opcional>
+// TEMPORÁRIO — diagnóstico de entrega. Query:
+//   ?tpl=hello_world|novo_lead   -> envia template
+//   ?mode=text                   -> envia mensagem de texto (dentro da janela 24h)
+//   &to=<numero opcional>
 // Removido depois.
 
 module.exports = async function handler(req, res) {
@@ -7,9 +9,17 @@ module.exports = async function handler(req, res) {
   var phoneId = process.env.WHATSAPP_PHONE_ID;
   var to = (req.query && req.query.to) || process.env.WHATSAPP_TO;
   var tpl = (req.query && req.query.tpl) || "novo_lead";
+  var mode = (req.query && req.query.mode) || "template";
 
   var payload;
-  if (tpl === "hello_world") {
+  if (mode === "text") {
+    payload = {
+      messaging_product: "whatsapp",
+      to: to,
+      type: "text",
+      text: { body: "Teste de entrega NexFin (texto simples). Se voce recebeu esta mensagem, me avise." }
+    };
+  } else if (tpl === "hello_world") {
     payload = {
       messaging_product: "whatsapp",
       to: to,
@@ -49,7 +59,7 @@ module.exports = async function handler(req, res) {
       }
     );
     var body = await r.json().catch(function () { return {}; });
-    return res.status(200).json({ httpStatus: r.status, ok: r.ok, sentTo: to, tpl: tpl, response: body });
+    return res.status(200).json({ httpStatus: r.status, ok: r.ok, sentTo: to, mode: mode, tpl: tpl, response: body });
   } catch (err) {
     return res.status(500).json({ error: String(err && err.message) });
   }
